@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Competition Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>♟️ Chess Competition Manager</h1>
+        <p>Run a local chess event with random pairings and automatic color switching.</p>
+      </header>
+
+      <section class="card">
+        <h2>Players</h2>
+        <form id="player-form" class="row">
+          <input id="player-name" type="text" placeholder="Player name" required maxlength="40" />
+          <button type="submit">Add Player</button>
+        </form>
+
+        <div class="row button-row">
+          <button id="start-btn" type="button">Start Tournament</button>
+          <button id="reset-btn" type="button" class="danger">Reset</button>
+        </div>
+
+        <ul id="players-list" class="players-list"></ul>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>Current Round</h2>
+          <span id="round-badge" class="badge">Round 0</span>
+        </div>
+
+        <div id="round-meta" class="round-meta">Tournament not started.</div>
+        <div id="pairings" class="pairings"></div>
+
+        <div class="row button-row">
+          <button id="complete-round-btn" type="button" disabled>Complete Round</button>
+          <button id="next-round-btn" type="button" disabled>Next Round (Lottery + Color Switch)</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Standings</h2>
+        <div id="standings"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
